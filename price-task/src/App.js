@@ -1,7 +1,8 @@
 import React from "react";
 
+import Price from "./Price";
 
-
+import PRICE from "./price.json";
 function App(){
 
 
@@ -9,62 +10,156 @@ function App(){
         {
             name:"Free",
             symbol: "$", 
-            years: "month"
-            // facility{
-            //     singleUser: "Single User"
-            // },
-            // {
-
-            // }
+            price: "0",
+            years: "month",
+            facility :[
+                {
+                    name:"Single User",
+                    acess: true
+                },
+                {
+                    name:"5GB Storage",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Public Projects",
+                    acess: true
+                },
+                {
+                    name:"Community Access",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Private Projects",
+                    acess: false
+                },
+                {
+                    name:"Dedicated Phone Support",
+                    acess: false
+                },
+                {
+                    name:"Free Subdomain",
+                    acess: false
+                },
+                {
+                    name:"Monthly Status Reports",
+                    acess: false,
+                }
+            ]
         },
         {
             name:"Plus",
-            symbol: "$", 
-            years: "month"
+            symbol: "$",
+            price: "9",
+            years: "month",
+            facility :[
+                {
+                    name:"Single User",
+                    acess: true
+                },
+                {
+                    name:"5GB Storage",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Public Projects",
+                    acess: true
+                },
+                {
+                    name:"Community Access",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Private Projects",
+                    acess: true
+                },
+                {
+                    name:"Dedicated Phone Support",
+                    acess: true
+                },
+                {
+                    name:"Free Subdomain",
+                    acess: true
+                },
+                {
+                    name:"Monthly Status Reports",
+                    acess: false,
+                }
+            ]
         },
         {
             name:"Pro",
             symbol: "$", 
-            years: "month"
+            price: "50",
+            years: "month",
+            facility :[
+                {
+                    name:"Single User",
+                    acess: true
+                },
+                {
+                    name:"5GB Storage",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Public Projects",
+                    acess: true
+                },
+                {
+                    name:"Community Access",
+                    acess: true
+                },
+                {
+                    name:"Unlimited Private Projects",
+                    acess: true
+                },
+                {
+                    name:"Dedicated Phone Support",
+                    acess: true
+                },
+                {
+                    name:"Free Subdomain",
+                    acess: true
+                },
+                {
+                    name:"Monthly Status Reports",
+                    acess: true,
+                }
+            ]
         },
     ]
     
+    const handClick = () =>{
+        console.log("clicked")
+    }
     return (
         <section className="pricing py-5">
           <div className="container">
             <div className="row">
-              
-              <div className="col-lg-4">
-                <div className="card mb-5 mb-lg-0">
-                  <div className="card-body">
-                    <h5 className="card-title text-muted text-uppercase text-center">{data.name}</h5>
-                    <h6 className="card-price text-center">{data.symbol}0<span className="period">/{data.years}</span></h6>
-                    <hr />
-                    <ul className="fa-ul">
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Single User</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>5GB Storage</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Unlimited Public Projects</li>
-                      <li><span className="fa-li"><i className="fas fa-check"></i></span>Community Access</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Unlimited
-                        Private Projects</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Dedicated
-                        Phone Support</li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Free Subdomain
-                      </li>
-                      <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>Monthly Status
-                        Reports</li>
-                    </ul>
-                    <div className="d-grid">
-                      <a href="#" className="btn btn-primary text-uppercase">Button</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-           
+           {data.map(res => <Price {...res} btn={handClick} />)}
             </div>
           </div>
         </section>
     )
 }
+
+// class App extends React.Component{
+    
+//     handClick = (name) =>{
+//         console.log(name)
+//     }
+//     render(){
+//     return (
+//         <section className="pricing py-5">
+//           <div className="container">
+//             <div className="row">
+//            {PRICE.map(res => <Price {...res} btn={this.handClick} />)}
+//             </div>
+//           </div>
+//         </section>
+//     );
+// }
+// }
+
 
 export default App;
