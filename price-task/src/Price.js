@@ -18,7 +18,7 @@ function Price({name,symbol,price,years,facility, btn}) {
                         
                     </ul>
                     <div className="d-grid">
-                        <a href="#" className="btn btn-primary text-uppercase" onClick={() =>{btn(name)}}>Button</a>
+                        <a  className="btn btn-primary text-uppercase" onClick={() =>{btn(name)}}>Button</a>
                         {/* onClcik ={btn} => event print agum
                             but onClick ={ () =>btn(name)} => output or name value varm
                         */}
