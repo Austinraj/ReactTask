@@ -173,29 +173,32 @@ class App extends React.Component{
     constructor(props){
         super(props)
         this.state ={
-
-        }
+            count: 0,
+        };
 
     }
     Addition = () =>{
-        this.setState({})
+        this.setState({count: this.state.count + 1})
     }
     Subraction = ()=>{
+        this.setState({count: this.state.count - 1})
 
     }
 
     rest = () =>{
+        this.setState({count: 0})
 
     }
 
     render(){
     return (
-        // <div>
-        //     <p>Count -0</p>
-        //     <button onClick={this.Addition} >+</button>{" "}
-        //     <button onClick={this.Subraction}>-</button>{" "}
-        //     <button onClick={this.rest}>0</button>{" "}
-        // </div>
+        <>
+        <div>
+            <p>Count -{this.state.count}</p>
+            <button onClick={this.Addition} >+</button>{" "}
+            <button onClick={this.Subraction}>-</button>{" "}
+            <button onClick={this.rest}>0</button>{" "}
+        </div>
         <section className="pricing py-5">
           <div className="container">
             <div className="row">
@@ -203,6 +206,7 @@ class App extends React.Component{
             </div>
           </div>
         </section>
+        </>
     );
 }
 }
